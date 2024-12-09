@@ -23,12 +23,15 @@ header {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 100%;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
 
 .nav-links {
@@ -816,12 +819,8 @@ nav {
 
 /* Mobile Navigation Styles */
 .burger-menu {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    z-index: 1001;
     display: none;
+    cursor: pointer;
 }
 
 .burger-menu div {
@@ -832,11 +831,10 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
-    /* Navigation */
     .burger-menu {
         display: block;
+        order: 1;
     }
 
     .nav-links {
@@ -849,105 +847,27 @@ nav {
         text-align: center;
         transition: 0.3s;
         padding: 20px 0;
-        gap: 0;
+        order: 2;
+    }
+
+    .logo {
+        order: 3;
     }
 
     .nav-links.active {
         right: 0;
     }
 
-    .nav-links a {
-        padding: 15px 0;
-        display: block;
+    /* Burger animation when active */
+    .burger-menu.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
     }
 
-    /* Dropdown adjustments */
-    .nav-links .dropdown {
-        width: 100%;
+    .burger-menu.active .line2 {
+        opacity: 0;
     }
 
-    .nav-links .dropdown-content {
-        position: relative;
-        width: 100%;
-        display: none;
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    .nav-links .dropdown.active .dropdown-content {
-        display: block;
-    }
-
-    /* Carousel */
-    .carousel .thumbnail {
-        display: none; /* Hide thumbnails on mobile */
-    }
-
-    .carousel .list .item .content {
-        padding: 20px;
-        width: 90%;
-        top: 15%;
-        padding-right: 0;
-        text-align: center;
-    }
-
-    .carousel .list .item .content .title {
-        font-size: 1.8em;
-    }
-
-    .carousel .list .item .content .des {
-        font-size: 0.9rem;
-    }
-
-    .carousel .arrows {
-        bottom: 120px;
-        top: auto;
-    }
-
-    /* Tour Pages */
-    .booking-widget-top {
-        position: relative;
-        width: auto;
-        margin: 1rem;
-        right: 0;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .tour-content {
-        padding: 0 1rem;
-    }
-
-    .tour-description {
-        text-align: center;
-    }
-
-    .tour-highlights {
-        margin: 1rem 0;
-    }
-
-    /* Calendar */
-    .calendar-section {
-        padding: 0;
-    }
-
-    /* Form adjustments */
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .btn-submit {
-        width: 100%;
-    }
-
-    /* Hero section */
-    .hero-section {
-        height: auto;
-    }
-
-    .hero-image {
-        height: 250px;
+    .burger-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
