@@ -139,12 +139,13 @@ nav {
     position: absolute;
     top: 20%;
     width: 80%;
-    max-width: 900px;
+    max-width: 800px;
     left: 50%;
     transform: translateX(-50%);
     padding-right: 20%;
     color: #fff;
-    text-shadow: 0 5px 10px #0004;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .carousel .list .item .author{
@@ -170,35 +171,34 @@ nav {
     grid-template-rows: 40px;
     gap: 5px;
     margin-top: 20px;
+    z-index: 2;
+    position: relative;
 }
 
 .carousel .list .item .buttons .btn {
     border: none;
-    background-color: #f1683a; /* Orange background */
-    color: white; /* White text */
-    letter-spacing: 3px;
-    font-family: Poppins;
-    font-weight: 500;
-    text-decoration: none; /* Remove underline from links */
+    background-color: #f1683a;
+    color: white;
+    font-weight: 600;
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .carousel .list .item .buttons .btn:hover {
-    transform: scale(1.1); /* Zoom effect on hover */
-    box-shadow: 0 0 15px rgba(241, 104, 58, 0.5); /* Orange glow effect */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(241, 104, 58, 0.5);
 }
 
 .carousel .list .item .buttons .book-now {
     background-color: transparent;
-    border: 2px solid #f1683a; /* Orange border */
-    color: white;
+    border: 2px solid #f1683a;
 }
 
 .carousel .list .item .buttons .book-now:hover {
-    background-color: #f1683a; /* Fill with orange on hover */
+    background-color: #f1683a;
 }
 
 /* thumbail */
@@ -252,6 +252,7 @@ nav {
     justify-content: space-between;
     padding: 0 20px;
     z-index: 1;
+    pointer-events: none;
 }
 
 .arrows button{
@@ -264,6 +265,7 @@ nav {
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
+    pointer-events: auto;
 }
 
 .arrows button:hover{
@@ -885,6 +887,7 @@ nav {
         width: 90%;
         top: 15%;
         padding-right: 0;
+        text-align: center;
     }
 
     .carousel .list .item .content .title {
@@ -896,8 +899,8 @@ nav {
     }
 
     .carousel .arrows {
+        bottom: 120px;
         top: auto;
-        bottom: 100px;
     }
 
     /* Tour Pages */
