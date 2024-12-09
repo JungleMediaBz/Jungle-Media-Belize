@@ -780,3 +780,124 @@ nav {
         top: 0;
     }
 }
+
+/* Mobile Navigation Styles */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .burger-menu {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        display: block;
+    }
+
+    /* Dropdown adjustments */
+    .nav-links .dropdown {
+        width: 100%;
+    }
+
+    .nav-links .dropdown-content {
+        position: relative;
+        width: 100%;
+        display: none;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-links .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    /* Carousel */
+    .carousel .thumbnail {
+        display: none; /* Hide thumbnails on mobile */
+    }
+
+    .carousel .list .item .content {
+        padding: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Tour Pages */
+    .booking-widget-top {
+        position: relative;
+        width: auto;
+        margin: 1rem;
+        right: 0;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .tour-content {
+        padding: 0 1rem;
+    }
+
+    .tour-description {
+        text-align: center;
+    }
+
+    .tour-highlights {
+        margin: 1rem 0;
+    }
+
+    /* Calendar */
+    .calendar-section {
+        padding: 0;
+    }
+
+    /* Form adjustments */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+
+    /* Hero section */
+    .hero-section {
+        height: auto;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+}
