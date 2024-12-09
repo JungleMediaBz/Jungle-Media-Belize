@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zipline Adventure - Jungle Media</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        /* Same calendar styles as other pages */
+        .flatpickr-calendar {
+            background: rgba(0, 0, 0, 0.9);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            color: white;
+            width: 100%;
+        }
+        /* ... rest of calendar styles ... */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../about.html">About</a>
+                <a href="../tours.html">Tours</a>
+            </div>
+            <div class="logo">
+                <img src="../image/logo.png" alt="Jungle Media Logo">
+            </div>
+        </nav>
+    </header>
+
+    <div class="tour-page">
+        <form id="booking-form" action="/submit-booking" method="POST">
+            <div class="hero-section">
+                <img src="../image/img3.jpg" alt="Zipline Adventure" class="hero-image">
+                
+                <div class="booking-widget-top">
+                    <h2>Tour Details</h2>
+                    <div class="form-group">
+                        <label for="departure">Departure From:</label>
+                        <select id="departure" name="departure" required>
+                            <option value="">Select location</option>
+                            <option value="san-pedro">San Pedro</option>
+                            <option value="caye-caulker">Caye Caulker</option>
+                            <option value="belize-city">Belize City</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="adults">Adults:</label>
+                            <input type="number" id="adults" name="adults" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="children">Children:</label>
+                            <input type="number" id="children" name="children" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-content">
+                <div class="content-grid">
+                    <div class="left-content">
+                        <h1>Zipline Adventure</h1>
+                        <p class="tour-description">
+                            Soar through the rainforest canopy on our thrilling zipline course. Experience the jungle from a bird's eye view as you glide from platform to platform, taking in breathtaking views of Belize's pristine rainforest.
+                        </p>
+
+                        <div class="tour-highlights">
+                            <h2>Tour Highlights</h2>
+                            <ul>
+                                <li>7 exciting zipline runs through the jungle canopy</li>
+                                <li>Professional safety equipment and guidance</li>
+                                <li>Stunning views of the rainforest</li>
+                                <li>Expert guides sharing local knowledge</li>
+                                <li>Perfect for both beginners and adventure seekers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="booking-widget-bottom">
+                        <div class="calendar-section">
+                            <h3>Select Date</h3>
+                            <div class="form-group">
+                                <div id="calendar" class="calendar-inline"></div>
+                                <input type="hidden" id="date" name="date" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#calendar", {
+            inline: true,
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            onChange: function(selectedDates, dateStr) {
+                document.getElementById('date').value = dateStr;
+            }
+        });
+    </script>
+    <script src="../booking.js"></script>
+</body>
+</html>

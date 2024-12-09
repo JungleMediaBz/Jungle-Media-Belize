@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Tour - Jungle Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="tours.html">Tours</a>
+            </div>
+            <div class="logo">
+                <img src="image/logo.png" alt="Jungle Media Logo">
+            </div>
+        </nav>
+    </header>
+
+    <div class="booking-container">
+        <h1>Book Your Adventure</h1>
+        <form id="booking-form" action="/submit-booking" method="POST">
+            <div class="form-group">
+                <label for="tour">Select Tour:</label>
+                <select id="tour" name="tour" required>
+                    <option value="">Choose your tour</option>
+                    <option value="belize-zoo">Belize Zoo</option>
+                    <option value="baboon-sanctuary">Baboon Sanctuary</option>
+                    <option value="zipline">Zipline Adventure</option>
+                    <option value="archaeological">Archaeological Sites</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="departure">Departure From:</label>
+                    <select id="departure" name="departure" required>
+                        <option value="">Select location</option>
+                        <option value="san-pedro">San Pedro</option>
+                        <option value="caye-caulker">Caye Caulker</option>
+                        <option value="belize-city">Belize City</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Tour Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="adults">Number of Adults:</label>
+                    <input type="number" id="adults" name="adults" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="children">Number of Children:</label>
+                    <input type="number" id="children" name="children" min="0" value="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="special-requests">Special Requests:</label>
+                <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Complete Booking</button>
+        </form>
+    </div>
+
+    <script src="booking.js"></script>
+</body>
+</html> 
