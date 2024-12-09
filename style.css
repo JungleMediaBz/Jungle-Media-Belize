@@ -137,29 +137,33 @@ nav {
 /* Adjust content positioning */
 .carousel .list .item .content {
     position: absolute;
-    top: 25%; /* Adjust if needed */
-    width: 1140px;
-    max-width: 80%;
+    top: 20%;
+    width: 80%;
+    max-width: 900px;
     left: 50%;
     transform: translateX(-50%);
-    padding-right: 30%;
-    box-sizing: border-box;
+    padding-right: 20%;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
 }
+
 .carousel .list .item .author{
     font-weight: bold;
     letter-spacing: 10px;
 }
+
 .carousel .list .item .title,
 .carousel .list .item .topic{
-    font-size: 5em;
+    font-size: 2.5em;
     font-weight: bold;
     line-height: 1.3em;
+    margin-bottom: 1rem;
 }
+
 .carousel .list .item .topic{
     color: #f1683a;
 }
+
 .carousel .list .item .buttons{
     display: grid;
     grid-template-columns: repeat(2, 130px);
@@ -167,6 +171,7 @@ nav {
     gap: 5px;
     margin-top: 20px;
 }
+
 .carousel .list .item .buttons .btn {
     border: none;
     background-color: #f1683a; /* Orange background */
@@ -195,6 +200,7 @@ nav {
 .carousel .list .item .buttons .book-now:hover {
     background-color: #f1683a; /* Fill with orange on hover */
 }
+
 /* thumbail */
 .thumbnail{
     position: absolute;
@@ -205,18 +211,21 @@ nav {
     display: flex;
     gap: 20px;
 }
+
 .thumbnail .item{
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
 }
+
 .thumbnail .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
+
 .thumbnail .item .content{
     color: #fff;
     position: absolute;
@@ -224,24 +233,27 @@ nav {
     left: 10px;
     right: 10px;
 }
+
 .thumbnail .item .content .title{
     font-weight: 500;
 }
+
 .thumbnail .item .content .description{
     font-weight: 300;
 }
+
 /* arrows */
 .arrows{
     position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
     display: flex;
-    gap: 10px;
-    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1;
 }
+
 .arrows button{
     width: 40px;
     height: 40px;
@@ -253,6 +265,7 @@ nav {
     font-weight: bold;
     transition: .5s;
 }
+
 .arrows button:hover{
     background-color: #fff;
     color: #000;
@@ -276,6 +289,7 @@ nav {
     opacity: 0;
     animation: showContent .5s 1s linear 1 forwards;
 }
+
 @keyframes showContent{
     to{
         transform: translateY(0px);
@@ -283,18 +297,23 @@ nav {
         opacity: 1;
     }
 }
+
 .carousel .list .item:nth-child(1) .content .title{
     animation-delay: 1.2s!important;
 }
+
 .carousel .list .item:nth-child(1) .content .topic{
     animation-delay: 1.4s!important;
 }
+
 .carousel .list .item:nth-child(1) .content .des{
     animation-delay: 1.6s!important;
 }
+
 .carousel .list .item:nth-child(1) .content .buttons{
     animation-delay: 1.8s!important;
 }
+
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img{
     width: 150px;
@@ -305,6 +324,7 @@ nav {
     border-radius: 30px;
     animation: showImage .5s linear 1 forwards;
 }
+
 @keyframes showImage{
     to{
         bottom: 0;
@@ -319,15 +339,18 @@ nav {
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
 .carousel.prev .list .item img{
     z-index: 100;
 }
+
 @keyframes showThumbnail{
     from{
         width: 0;
         opacity: 0;
     }
 }
+
 .carousel.next .thumbnail{
     animation: effectNext .5s linear 1 forwards;
 }
@@ -354,11 +377,11 @@ nav {
 .carousel.prev .time{
     animation: runningTime 3s linear 1 forwards;
 }
+
 @keyframes runningTime{
     from{ width: 100%}
     to{width: 0}
 }
-
 
 /* prev click */
 
@@ -372,6 +395,7 @@ nav {
     bottom: 0;
     left: 0;
 }
+
 @keyframes outFrame{
     to{
         width: 150px;
@@ -387,10 +411,12 @@ nav {
     opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
 .carousel.next .arrows button,
 .carousel.prev .arrows button{
     pointer-events: none;
 }
+
 .carousel.prev .list .item:nth-child(2) .content .author,
 .carousel.prev .list .item:nth-child(2) .content .title,
 .carousel.prev .list .item:nth-child(2) .content .topic,
@@ -407,14 +433,17 @@ nav {
         opacity: 0;
     }
 }
+
 @media screen and (max-width: 678px) {
     .carousel .list .item .content{
         padding-right: 0;
     }
+
     .carousel .list .item .content .title{
         font-size: 30px;
     }
 }
+
 /* Booking Form Styles */
 .booking-container {
     max-width: 800px;
@@ -512,7 +541,9 @@ nav {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-}/* Tour Page Styles */
+}
+
+/* Tour Page Styles */
 .tour-page {
     margin-top: 80px; /* Account for fixed header */
 }
@@ -783,9 +814,12 @@ nav {
 
 /* Mobile Navigation Styles */
 .burger-menu {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 1001;
     display: none;
-    cursor: pointer;
-    padding: 10px;
 }
 
 .burger-menu div {
@@ -801,7 +835,6 @@ nav {
     /* Navigation */
     .burger-menu {
         display: block;
-        z-index: 1001;
     }
 
     .nav-links {
@@ -849,8 +882,22 @@ nav {
 
     .carousel .list .item .content {
         padding: 20px;
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        top: 15%;
+        padding-right: 0;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 1.8em;
+    }
+
+    .carousel .list .item .content .des {
+        font-size: 0.9rem;
+    }
+
+    .carousel .arrows {
+        top: auto;
+        bottom: 100px;
     }
 
     /* Tour Pages */
